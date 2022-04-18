@@ -6,15 +6,11 @@ pipeline {
        stages {
             stage('SCM checkout') {
                   steps {
-                        git url: 'https://github.com/testproject654/deploy-app.git'
+                        git url: 'https://github.com/testproject654/Sentrifugo.git'
                         }
              }
              
-             stage('archiving artifacts') {
-                  steps {
-                          archiveArtifacts '**/*.html'
-                        }
-              }
+            
            
            stage('test') {
                   steps {
@@ -24,11 +20,6 @@ pipeline {
                         }
               }
            
-           stage('upload to server') {
-                  steps {
-                          sh 'cp index.html /var/www/html'
-                        }
-              }
              
        }
 }
